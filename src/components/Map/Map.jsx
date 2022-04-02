@@ -41,14 +41,16 @@ function getMap(origin, destination)  {
 
 const Map = () => {
     return (
-        <div dangerouslySetInnerHTML={{ __html: <iframe
-        width="700"
-        height="700"
-        frameborder="0" style="border:0"
-        referrerpolicy="no-referrer-when-downgrade"
-        src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyCCjkUAUMwYMmgeYQmgSH7VjU8kjSHztr4&origin=120+Folsom+Drive,+Holly+Springs,+NC&destination=Rovisys+Holly+Springs"
-        allowfullscreen>
-        </iframe>}} />
+        <div dangerouslySetInnerHTML={{ __html: '<iframe '.concat(
+            'width="700" ',
+            'height="700" ',
+            'frameborder="0" style="border:0" ',
+            'referrerpolicy="no-referrer-when-downgrade" ',
+            'src="https://www.google.com/maps/embed/v1/directions?key=',
+            'AIzaSyCCjkUAUMwYMmgeYQmgSH7VjU8kjSHztr4',
+            '&origin=120+Folsom+Drive,+Holly+Springs,+NC&destination=Rovisys+Holly+Springs"',
+            ' allowfullscreen>',
+            '</iframe>')}} />
       );
   };
   
