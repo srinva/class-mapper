@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "react-bootstrap";
 
 const ReadOnlyRow = ({ cls, handleEditClick, handleDeleteClick }) => {
   return (
@@ -8,12 +9,22 @@ const ReadOnlyRow = ({ cls, handleEditClick, handleDeleteClick }) => {
       <td>{cls.time}</td>
       <td>{cls.location}</td>
       <td>
-        <button type="button" onClick={(e) => handleEditClick(e, cls)}>
+        <Button
+          size="sm"
+          type="button"
+          variant="primary"
+          onClick={(e) => handleEditClick(e, cls)}
+        >
           Edit
-        </button>
-        <button type="button" onClick={(e) => handleDeleteClick(cls.id)}>
+        </Button>
+        <Button
+          size="sm"
+          type="button"
+          variant="danger"
+          onClick={(e) => handleDeleteClick(cls.id)}
+        >
           Delete
-        </button>
+        </Button>
       </td>
     </tr>
   );

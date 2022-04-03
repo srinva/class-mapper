@@ -9,36 +9,39 @@ import "./App.css";
 
 function App(props) {
   return (
-    <div className="App">
-      <Container>
-        <Row className="justify-content-md-center">
-          <Col xs={8}>
-            <div className="ClassInput">
-              <ClassInput />
-            </div>
-            <div className="MapToggle">
-              <MapToggle />
-            </div>
-          </Col>
-          <Col>
-            <Stack gap={3}>
-              <div className="Map">
-                <h3>Bicycling</h3>
-                <Map mode="bicycling" />
+    <>
+      <div className="App">
+        <h1>Class-Mapper</h1>
+        <Container>
+          <Row className="justify-content-md-center">
+            <Col xs={8}>
+              <div className="ClassInput">
+                <ClassInput />
               </div>
-              <div className="Map">
-                <h3>Transit</h3>
-                <Map mode="transit" />
+              <div className="MapToggle">
+                <MapToggle />
               </div>
-              <div className="Map">
-                <h3>Walking</h3>
-                <Map mode="walking" />
-              </div>
-            </Stack>
-          </Col>
-        </Row>
-      </Container>
-    </div>
+            </Col>
+            <Col>
+              <Stack gap={3}>
+                <div className="Map">
+                  <h3>Walking</h3>
+                  <Map mode="walking" />
+                </div>
+                <div className="Map">
+                  <h3>Bicycling</h3>
+                  <Map mode="bicycling" />
+                </div>
+                <div className="Map">
+                  <h3>Transit</h3>
+                  <Map mode="transit" />
+                </div>
+              </Stack>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+    </>
   );
 }
 

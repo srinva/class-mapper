@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "react-bootstrap";
 
 const EditableRow = ({
   editFormData,
@@ -48,10 +49,17 @@ const EditableRow = ({
         />
       </td>
       <td>
-        <button type="submit">Save</button>
-        <button type="button" onClick={handleCancelClick}>
+        <Button variant="success" size="sm" type="submit">
+          Save
+        </Button>
+        <Button
+          variant="danger"
+          size="sm"
+          type="button"
+          onClick={handleCancelClick}
+        >
           Cancel
-        </button>
+        </Button>
       </td>
     </tr>
   );
