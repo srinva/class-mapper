@@ -21,31 +21,18 @@ function App(props) {
           <Col>
             <Stack gap={3}>
               <div>
-                <Map
-                  origin="120 Folsom Drive, Holly Springs, NC"
-                  destination="NCSU"
-                  mode="bicycling"
-                />
+                <Map mode="bicycling" />
               </div>
               <div>
-                <Map
-                  origin="120 Folsom Drive, Holly Springs, NC"
-                  destination="NCSU"
-                  mode="transit"
-                />
+                <Map mode="transit" />
               </div>
               <div>
-                <Map
-                  origin="120 Folsom Drive, Holly Springs, NC"
-                  destination="NCSU"
-                  mode="walking"
-                />
+                <Map mode="walking" />
               </div>
             </Stack>
           </Col>
         </Row>
       </Container>
-      //
     </div>
   );
 }

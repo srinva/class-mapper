@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 import "./ClassInput.css";
-import data from "./ClassData.json";
+//import data from "./ClassData.json";
 import { nanoid } from "nanoid";
 import ReadOnlyRow from "./ReadOnlyRow";
 import EditableRow from "./EditableRow";
 
 const ClassInput = () => {
+  
+  let data = JSON.parse(window.localStorage.getItem("classes"));
+  console.log(data);
+  if (data == undefined) {
+    data = [];
+  }
   const [classes, setClasses] = useState(data);
+  
 
   const [addFormData, setAddFormData] = useState({
     class: "",
@@ -32,8 +39,9 @@ const ClassInput = () => {
 
     const newFormData = { ...addFormData };
     newFormData[fieldName] = fieldValue;
-
+    
     setAddFormData(newFormData);
+    
   };
 
   const handleEditFormChange = (e) => {
@@ -62,6 +70,7 @@ const ClassInput = () => {
 
     const newClasses = [...classes, newClass];
     setClasses(newClasses);
+    window.localStorage.setItem("classes", JSON.stringify(newClasses));
   };
 
   const handleEditFormSubmit = (e) => {
@@ -82,6 +91,7 @@ const ClassInput = () => {
     newClasses[index] = editedClass;
 
     setClasses(newClasses);
+    window.localStorage.setItem("classes", newClasses);
     setEditClassID(null);
   };
 
@@ -95,6 +105,8 @@ const ClassInput = () => {
       time: cls.time,
       location: cls.location,
     };
+
+    
 
     setEditFormData(formValues);
   };
