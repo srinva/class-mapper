@@ -146,7 +146,6 @@ const ClassInput = () => {
           </tbody>
         </table>
       </form>
-      <h2>Add Class</h2>
       <form onSubmit={handleAddFormSubmit}>
         <input
           type="text"

@@ -23,7 +23,7 @@ th {
 }
 
 td {
-  background-color: rgb(205, 235, 253);
+  background-color: rgb(244, 214, 207);
 }
 
 form {
@@ -38,4 +38,7 @@ form td:last-child {
 
 form * {
   font-size: 14px;
+}
+input[type="text"] {
+  width: 100px;
 }
