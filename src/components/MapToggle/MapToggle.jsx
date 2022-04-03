@@ -4,6 +4,8 @@ import React from "react";
 function onClickToggle(origin, dest) {
   window.localStorage.setItem("origin", origin);
   window.localStorage.setItem("destination", dest);
+  var storEv = new Event('storage');
+  dispatchEvent(storEv);
 }
 
 const MapToggle = () => {
