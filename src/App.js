@@ -24,7 +24,7 @@ function App(props) {
             <Stack gap={3}>
               <div className="Map">
                 <h3>Bicycling</h3>
-                <Map mode="bicycling" />
+                <Map mode="bicycling"/>
               </div>
               <div className="Map">
                 <h3>Transit</h3>

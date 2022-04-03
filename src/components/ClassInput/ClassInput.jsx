@@ -71,6 +71,7 @@ const ClassInput = () => {
     const newClasses = [...classes, newClass];
     setClasses(newClasses);
     window.localStorage.setItem("classes", JSON.stringify(newClasses));
+    //this.refs.bike.setOrigin(newClasses[newClasses.length-1]);
   };
 
   const handleEditFormSubmit = (e) => {
