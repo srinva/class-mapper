@@ -12,7 +12,7 @@ table {
 
 th,
 td {
-  border: 1px solid #ffffff;
+  border: 10px solid #ffffff;
   text-align: left;
   padding: 8px;
   font-size: 16px;
@@ -41,4 +41,11 @@ form * {
 }
 input[type="text"] {
   width: 100px;
+  height: 30px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.AddClass {
+  margin: 10px;
 }

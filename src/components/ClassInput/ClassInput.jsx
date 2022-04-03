@@ -4,16 +4,15 @@ import "./ClassInput.css";
 import { nanoid } from "nanoid";
 import ReadOnlyRow from "./ReadOnlyRow";
 import EditableRow from "./EditableRow";
+import { Button } from "react-bootstrap";
 
 const ClassInput = () => {
-  
   let data = JSON.parse(window.localStorage.getItem("classes"));
   console.log(data);
   if (data == undefined) {
     data = [];
   }
   const [classes, setClasses] = useState(data);
-  
 
   const [addFormData, setAddFormData] = useState({
     class: "",
@@ -39,9 +38,8 @@ const ClassInput = () => {
 
     const newFormData = { ...addFormData };
     newFormData[fieldName] = fieldValue;
-    
+
     setAddFormData(newFormData);
-    
   };
 
   const handleEditFormChange = (e) => {
@@ -92,7 +90,7 @@ const ClassInput = () => {
     newClasses[index] = editedClass;
 
     setClasses(newClasses);
-    window.localStorage.setItem("classes", newClasses);
+    window.localStorage.setItem("classes", JSON.stringify(newClasses));
     setEditClassID(null);
   };
 
@@ -106,8 +104,6 @@ const ClassInput = () => {
       time: cls.time,
       location: cls.location,
     };
-
-    
 
     setEditFormData(formValues);
   };
@@ -188,7 +184,9 @@ const ClassInput = () => {
           placeholder="111 Lampe Drive"
           onChange={handleAddFormChange}
         />
-        <button type="submit">Add Class</button>
+        <Button variant="success" type="submit" size="sm" className="AddClass">
+          Add Class
+        </Button>
       </form>
     </div>
   );
