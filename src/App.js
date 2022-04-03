@@ -1,31 +1,42 @@
-import './App.css';
-import React from 'react';
+import "./App.css";
+import React from "react";
 import "./components/ClassInput/ClassInput";
 import ClassInput from "./components/ClassInput/ClassInput";
-import Map from "./components/Map/Map"
-import { API_KEY } from './private';
-import {Row, Col} from "react-bootstrap";
+import Map from "./components/Map/Map";
+import { API_KEY } from "./private";
+import { Row, Col, Container } from "react-bootstrap";
 
 function App(props) {
+  var classes = JSON.parse(localStorage.getItem("classes"));
+  var origin = '';
+  var destination = '';
+  if (classes.length >= 2) {
+    origin = classes[0].location;
+    destination = classes[1].location;
+  }
   
   return (
-  <div>
-  <ClassInput/>
-  <Row>
-    <Col>
-    <Map origin='120 Folsom Drive, Holly Springs, NC' destination='NCSU' mode='bicycling'/>
-    </Col>
-    <Col>
-    <Map origin='120 Folsom Drive, Holly Springs, NC' destination='NCSU' mode='walking'/>
-    </Col>
-    <Col>
-    <Map origin='120 Folsom Drive, Holly Springs, NC' destination='NCSU' mode='transit'/>
-    </Col>
-  </Row>
-  </div>
+    <Container>
+      <ClassInput key="input"/>
+      <Row>
+        <Col>
+          <Map key="bike"
+            mode="bicycling"
+          />
+        </Col>
+        <Col>
+          <Map key="walk"
+            mode="walking"
+          />
+        </Col>
+        <Col>
+          <Map key="transit"
+            mode="transit"
+          />
+        </Col>
+      </Row>
+    </Container>
   );
 }
-
-
 
 export default App;
