@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { API_KEY } from "../../private";
 
 const Map = (props) => {
-  var classes = JSON.parse(window.localStorage.getItem("classes"));
+  //svar classes = JSON.parse(window.localStorage.getItem("classes"));
   const [origin, setOrigin] = useState("Valentine Commons");
   const [destination, setDestination] = useState("Carroll Residence Hall");
 
-  if (classes.length >= 2) {
-    // origin = classes[0].location;
-    // destination = classes[1].location;
-  }
+  // if (classes.length >= 2) {
+  // origin = classes[0].location;
+  // destination = classes[1].location;
+  // }
   // setOrigin(classes[0].location);
   // setDestination(classes[1].location);
 

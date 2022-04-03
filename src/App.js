@@ -16,17 +16,22 @@ function App(props) {
             <div className="ClassInput">
               <ClassInput />
             </div>
-            <MapToggle />
+            <div className="MapToggle">
+              <MapToggle />
+            </div>
           </Col>
           <Col>
             <Stack gap={3}>
-              <div>
+              <div className="Map">
+                <h3>Bicycling</h3>
                 <Map mode="bicycling" />
               </div>
-              <div>
+              <div className="Map">
+                <h3>Transit</h3>
                 <Map mode="transit" />
               </div>
-              <div>
+              <div className="Map">
+                <h3>Walking</h3>
                 <Map mode="walking" />
               </div>
             </Stack>
